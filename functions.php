@@ -6,6 +6,24 @@ function confirm($result){
     }
 }
 
+function listar_contas(){
+    global $connection;
+    $query = "SELECT * FROM conta";
+    $select_all_contas = mysqli_query($connection, $query);
+    $counts_contas = mysqli_num_rows($select_all_contas);
+
+    echo "<div class='huge'>{$counts_contas}</div>";
+}
+
+function select_saldo_user(){
+    global $connection;
+    $query = "SELECT saldo_user FROM usuario where id_user = 1";
+    $select_saldo = mysqli_query($connection, $query);
+    $row = mysqli_fetch_assoc($select_saldo);
+        $select_saldo = $row['saldo_user'];
+        echo "<div class='huge'>{$select_saldo}</div>";
+}
+
 function insert_despesa(){
     //INSERT DESPESA
     global $connection;
@@ -64,5 +82,3 @@ function show_all_despesas(){
         echo "</tr>";
     }
 }
-
-?>

@@ -1,8 +1,7 @@
-
-<style> 
-#linha {
-  border-top: 2px solid black;
-}
+<style>
+    #linha {
+        border-top: 2px solid black;
+    }
 </style>
 
 <h1 id="linha"></h1>
@@ -38,9 +37,9 @@
             $data_despesa = $_POST['data_despesa'];
 
             $query = "UPDATE conta SET ";
-            $query .= "titulo_despesa = '{$titulo_despesa}', "; 
-            $query .= "tipo_despesa = '{$tipo_despesa}', "; 
-            $query .= "valor_despesa = '{$valor_despesa}', "; 
+            $query .= "titulo_despesa = '{$titulo_despesa}', ";
+            $query .= "tipo_despesa = '{$tipo_despesa}', ";
+            $query .= "valor_despesa = '{$valor_despesa}', ";
             $query .= "data_despesa = '{$data_despesa}' WHERE id_despesa = {$id_despesa}";
 
             $update_conta = mysqli_query($connection, $query);
@@ -50,12 +49,12 @@
         ?>
 
     </div>
-    
+
     <div class="form-group">
         <label for="title">Nome Custo</label>
         <input value="<?php echo $titulo_despesa ?>" type="text" class="form-control" name="titulo_despesa" />
     </div>
-    
+
     <div class="form-group">
         <label for="post_tags">Valor da conta</label>
         <input value="<?php echo $valor_despesa ?>" type="text" class="form-control" name="valor_despesa" />

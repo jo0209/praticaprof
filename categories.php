@@ -22,22 +22,24 @@ include "includes/navigation.php";
 
                         <div>
 
-                        <?php
-                        insert_despesa();
-                        ?>
+                            <?php
+                            insert_despesa();
+                            ?>
 
                         </div>
 
 
                         <div class="col-xs-3">
-                            <style> 
+                            <style>
                                 #linha {
                                     border-top: 2px solid black;
                                 }
-                                .add_contas{
+
+                                .add_contas {
                                     margin-bottom: 15px;
                                 }
-                                .tabela{
+
+                                .tabela {
                                     margin-left: 15px;
                                 }
                             </style>
@@ -47,7 +49,7 @@ include "includes/navigation.php";
                             <form action="" method="POST">
 
                                 <div class="form-group">
-                                    <label  class="nome custo" for="titulo_despesa">Nome Custo</label>
+                                    <label class="nome custo" for="titulo_despesa">Nome Custo</label>
                                     <input class="form-control" type="text" name="titulo_despesa">
                                 </div>
                                 <div class="form-group">
@@ -69,7 +71,7 @@ include "includes/navigation.php";
                         </div>
 
                         <div class="col-xs-3">
-                            <?php 
+                            <?php
                             if (isset($_GET['edit'])) {
                                 $id_despesa = $_GET['edit'];
                                 include "includes/update_contas.php";
@@ -78,9 +80,9 @@ include "includes/navigation.php";
                         </div>
 
                     </div>
-                    
+
                     <div class="col-xs-6 tabela">
-                    <h3>Tabela de gastos</h3>
+                        <h3>Tabela de gastos</h3>
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -92,7 +94,7 @@ include "includes/navigation.php";
                                     <th></th>
                                     <th></th>
                                 </tr>
-                                <tbody>
+                            <tbody>
 
                                 <?php
                                 show_all_despesas();
@@ -101,11 +103,11 @@ include "includes/navigation.php";
                                 <?php
                                 delete_despesa();
                                 ?>
-                             
-                                </tbody>
+
+                            </tbody>
                             </thead>
                         </table>
-                        </div>
+                    </div>
                 </div>
                 <!-- /.row -->
 
