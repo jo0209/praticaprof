@@ -30,9 +30,24 @@ include "includes/navigation.php";
 
 
                         <div class="col-xs-3">
+                            <style> 
+                                #linha {
+                                    border-top: 2px solid black;
+                                }
+                                .add_contas{
+                                    margin-bottom: 15px;
+                                }
+                                .tabela{
+                                    margin-left: 15px;
+                                }
+                            </style>
+
+                            <h1 id="linha"></h1>
+                            <h3 class="add_contas">Adicionar Contas</h3>
                             <form action="" method="POST">
+
                                 <div class="form-group">
-                                    <label for="titulo_despesa">Nome Custo</label>
+                                    <label  class="nome custo" for="titulo_despesa">Nome Custo</label>
                                     <input class="form-control" type="text" name="titulo_despesa">
                                 </div>
                                 <div class="form-group">
@@ -53,7 +68,19 @@ include "includes/navigation.php";
                             </form>
                         </div>
 
-                        <div class="col-xs-6">
+                        <div class="col-xs-3">
+                            <?php 
+                            if (isset($_GET['edit'])) {
+                                $id_despesa = $_GET['edit'];
+                                include "includes/update_contas.php";
+                            }
+                            ?>
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-xs-6 tabela">
+                    <h3>Tabela de gastos</h3>
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -79,8 +106,6 @@ include "includes/navigation.php";
                             </thead>
                         </table>
                         </div>
-
-                    </div>
                 </div>
                 <!-- /.row -->
 
