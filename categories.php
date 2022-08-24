@@ -8,14 +8,6 @@ include "includes/navigation.php";
     <div id="wrapper">
 
         <!-- Navigation -->
-        
-        <?php
-        if ($connection) {
-           echo "con";
-        }
-        ?>
-
-
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -60,12 +52,6 @@ include "includes/navigation.php";
                                 </div>
                             </form>
                         </div>
-                        
-                        <?php
-                        $query = "SELECT * FROM conta";
-                        $select_contas = mysqli_query($connection, $query);
-                        ?>
-
 
                         <div class="col-xs-6">
                         <table class="table table-bordered table-hover">
@@ -76,25 +62,17 @@ include "includes/navigation.php";
                                     <th>Tipo</th>
                                     <th>Valor</th>
                                     <th>Data</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                                 <tbody>
 
                                 <?php
-                                while($row = mysqli_fetch_assoc($select_contas)){
-                                    $id_despesa = $row['id_despesa'];
-                                    $tipo_despesa = $row['tipo_despesa'];
-                                    $titulo_despesa = $row['titulo_despesa'];
-                                    $valor_despesa = $row['valor_despesa'];
-                                    $data_despesa = $row['data_despesa'];
+                                show_all_despesas();
+                                ?>
 
-                                    echo "<tr>";
-                                    echo "<td>{$id_despesa}</td>";
-                                    echo "<td>{$titulo_despesa}</td>";
-                                    echo "<td>{$tipo_despesa}</td>";
-                                    echo "<td>{$valor_despesa}</td>";
-                                    echo "<td>{$data_despesa}</td>";
-                                    echo "</tr>";
-                                }
+                                <?php
+                                delete_despesa();
                                 ?>
                              
                                 </tbody>

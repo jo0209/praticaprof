@@ -7,12 +7,6 @@ include "includes/navigation.php";
     <div id="wrapper">
 
         <!-- Navigation -->
-        
-        <?php
-        if ($connection) {
-           echo "con";
-        }
-        ?>
 
 
         <div id="page-wrapper">
