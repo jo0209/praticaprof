@@ -9,8 +9,8 @@
 <form action="" method="POST">
     <div class="form-group">
         <h3 for="">Editar Contas</h3>
+        
         <?php
-
         if (isset($_GET['edit'])) {
             $id_despesa = $_GET['edit'];
 

@@ -20,36 +20,40 @@ include "includes/navigation.php";
                             <small>Gerencie seu saldo, incrementando ou decrementando</small>
                         </h1>
 
-                        <div class="col-xs-3">
-                            <form action="" method="POST">
-                                <div class="form-group">
-                                    <label class="nome custo" for="titulo_despesa">Atualizar saldo</label>
-                                    <input class="form-control" type="text" name="atualiza_saldo">
-                                </div>
-                                <div class="form-group">
-                                    <input class="btn btn-primary" type="submit" name="atualiza_saldo" value="Atualizar saldo">
-                                </div>
-                            </form>
-                        </div>
+                        <?php
+                        if (isset($_POST['update_saldo'])) {
+                        $saldo_user = $_POST['saldo_user'];
+                        $query = "UPDATE usuario SET ";
+                        $query .= "saldo_user = '{$saldo_user}'";
+                        $update_saldo = mysqli_query($connection, $query);
+                        }
+                        ?>
 
-                        <div class="col-xs-3">
-                            <?php
-                            $query = "SELECT * FROM usuario WHERE id_user = $id_user";
-                            $select_saldo = mysqli_query($connection, $query);
-                            while ($row = mysqli_fetch_assoc($select_saldo)) {
-                                $id_user = $row['id_user'];
-                            }
-
-                            if (isset($_POST['atualiza_saldo'])) {
-                                $salario_user = $_POST['salario_user'];
-
-                                $query = "UPDATE usuario SET ";
-                                $query = "salario_user = '{$salario_user}' WHERE id_user = {$id_user}";
-
-                                $atualiza_saldo = mysqli_query($connection, $query);
-                                confirm($atualiza_saldo);
+                        <?php
+                        if (isset($_GET['edit_saldo'])) {
+                            $saldo_user = $_GET['edit'];
+                
+                            $query = "SELECT saldo_user FROM saldo_user WHERE id_user = $id_user";
+                            $select_saldo_user_id = mysqli_query($connection, $query);
+                
+                            while ($row = mysqli_fetch_assoc($select_saldo_user_id)) {
+                                $valor_despesa = $row['valor_despesa'];
                             }
                             ?>
+
+                            <?php } ?>
+
+
+                        <div class="col-xs-3">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="">Tipo da conta</label>
+                                    <input value="" type="text" class="form-control" name="saldo_user" />
+                                </div>
+                                <div class="form-group">
+                                    <input class="btn btn-primary" type="submit" name="update_saldo" value="Novo saldo">
+                                </div>
+                            </form>
                         </div>
 
                     </div>

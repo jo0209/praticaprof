@@ -17,7 +17,7 @@ include "includes/navigation.php";
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Gestão financeira
-                            <small>Adicionar gastos</small>
+                            <small>Gerencie seus gastos</small>
                         </h1>
 
                         <div>
@@ -45,7 +45,7 @@ include "includes/navigation.php";
                             </style>
 
                             <h1 id="linha"></h1>
-                            <h3 class="add_contas">Adicionar Contas</h3>
+                            <h3 class="add_contas">Gerenciar Contas</h3>
                             <form action="" method="POST">
 
                                 <div class="form-group">
