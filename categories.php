@@ -45,23 +45,23 @@ include "includes/navigation.php";
                             </style>
 
                             <h1 id="linha"></h1>
-                            <h3 class="add_contas">Gerenciar Contas</h3>
+                            <h3 class="add_contas">Gerenciar Despesas</h3>
                             <form action="" method="POST">
 
                                 <div class="form-group">
-                                    <label class="nome custo" for="titulo_despesa">Nome Custo</label>
+                                    <label class="nome custo" for="titulo_despesa">Nome Despesa</label>
                                     <input class="form-control" type="text" name="titulo_despesa">
                                 </div>
                                 <div class="form-group">
-                                    <label for="valor_despesa">Valor do Custo</label>
+                                    <label for="valor_despesa">Valor da Despesa</label>
                                     <input class="form-control" type="text" name="valor_despesa">
                                 </div>
                                 <div class="form-group">
-                                    <label for="tipo_despesa">Tipo do custo</label>
+                                    <label for="tipo_despesa">Tipo de Despesa</label>
                                     <input class="form-control" type="text" name="tipo_despesa">
                                 </div>
                                 <div class="form-group">
-                                    <label for="data_despesa">Data Custo</label>
+                                    <label for="data_despesa">Data da Despesa</label>
                                     <input class="form-control" type="date" name="data_despesa">
                                 </div>
                                 <div class="form-group">

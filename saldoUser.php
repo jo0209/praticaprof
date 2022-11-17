@@ -47,7 +47,7 @@ include "includes/navigation.php";
                         <div class="col-xs-3">
                             <form action="" method="post">
                                 <div class="form-group">
-                                    <label for="">Tipo da conta</label>
+                                    <label for="">Insira o novo saldo</label>
                                     <input value="" type="text" class="form-control" name="saldo_user" />
                                 </div>
                                 <div class="form-group">
@@ -76,13 +76,7 @@ include "includes/navigation.php";
                                 </div>
                             </div>
                         </div>
-                        <a href="saldoUser.php">
-                            <div class="panel-footer">
-                                <span class="pull-left">Veja detalhes</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
+                        
                     </div>
                 </div>
             </div>

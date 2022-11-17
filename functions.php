@@ -56,9 +56,10 @@ function insert_despesa()
         $tipo_despesa = $_POST['tipo_despesa'];
         $titulo_despesa = $_POST['titulo_despesa'];
         $valor_despesa = $_POST['valor_despesa'];
+        $data_despesa = $_POST['data_despesa'];
 
-        $query = "INSERT INTO conta(tipo_despesa, titulo_despesa, valor_despesa) ";
-        $query .= "VALUES ('{$tipo_despesa}', '{$titulo_despesa}', '{$valor_despesa}')";
+        $query = "INSERT INTO conta(tipo_despesa, titulo_despesa, valor_despesa, data_despesa) ";
+        $query .= "VALUES ('{$tipo_despesa}', '{$titulo_despesa}', '{$valor_despesa}', '{$data_despesa}')";
 
         $create_despesa_query = mysqli_query($connection, $query);
 
