@@ -6,6 +6,8 @@ function saldo_total_user()
     gasto_total();
 }
 
+
+
 function gasto_total()
 {
     //SELECT DA SOMA TOTAL DAS CONTAS DO USUARIO
@@ -91,6 +93,12 @@ function show_all_despesas()
     //SEARCH DESPESAS
     global $connection;
     $query = "SELECT * FROM conta";
+    if(!is_null($_POST['from']) && $_POST['from'] != ""  && !is_null($_POST['to']) && $_POST['to'] != ""){
+        $from = date('Y-m-d', strtotime($_POST['from']));
+        $to = date('Y-m-d', strtotime($_POST['to']));
+        
+        $query = "SELECT * FROM conta WHERE data_despesa between '$from' and '$to'";
+    }
     $select_contas = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($select_contas)) {
         $id_despesa = $row['id_despesa'];
@@ -99,7 +107,7 @@ function show_all_despesas()
         $valor_despesa = $row['valor_despesa'];
         $data_despesa = $row['data_despesa'];
 
-        echo "<tr>";
+        echo "<tr class='show_all'>";
         echo "<td>{$id_despesa}</td>";
         echo "<td>{$titulo_despesa}</td>";
         echo "<td>{$tipo_despesa}</td>";

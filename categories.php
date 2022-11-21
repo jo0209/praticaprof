@@ -104,6 +104,8 @@ include "includes/navigation.php";
                                 delete_despesa();
                                 ?>
 
+
+
                             </tbody>
                             </thead>
                         </table>

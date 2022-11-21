@@ -28,26 +28,21 @@ include "includes/navigation.php";
 
                             <table class="table table-bordered table-hover">
 
-                                <div class="row" id="bulkOptionsContainer">
-                                    <div class="col-sm-4">
-                                        <select class="form-control" name="" id="">
-                                            <option value="">Selecione o Mês</option>
-                                            <option value="">Janeiro</option>
-                                            <option value="">Fevereiro</option>
-                                            <option value="">Março</option>
-                                            <option value="">Abril</option>
-                                            <option value="">Maio</option>
-                                            <option value="">Junho</option>
-                                            <option value="">Julho</option>
-                                            <option value="">Agosto</option>
-                                            <option value="">Setembro</option>
-                                            <option value="">Outubro</option>
-                                            <option value="">Novembro</option>
-                                            <option value="">Dezembro</option>
-                                        </select>
+                                <div class="row" id="">
+                                    <div class="col-sm-3">
+                                        <label>Data Inicial </label>
+                                        <input class="form-control" type="date" name="from">
                                     </div>
+                                    <div class="col-sm-3">
+                                        <label>Data Final </label>
+                                        <input class="form-control" type="date" name="to">
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="row" id="">
                                     <div class="form-group col-xs-4">
-                                        <input type="submit" class="btn btn-success" name="submit" value="Aplicar">
+                                        <input type="submit" class="btn btn-success" name="submit" id="submitForm" value="submit">
                                     </div>
                                 </div>
 
