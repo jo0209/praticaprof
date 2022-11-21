@@ -24,30 +24,57 @@ include "includes/navigation.php";
 
                     <div class="col-xs-6 tabela">
                         <h3>Tabela de gastos</h3>
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nome custo</th>
-                                    <th>Tipo</th>
-                                    <th>Valor</th>
-                                    <th>Data</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            <tbody>
+                        <form action="" method="post">
 
-                                <?php
-                                show_all_despesas();
-                                ?>
+                            <table class="table table-bordered table-hover">
 
-                                <?php
-                                delete_despesa();
-                                ?>
+                                <div class="row" id="bulkOptionsContainer">
+                                    <div class="col-sm-4">
+                                        <select class="form-control" name="" id="">
+                                            <option value="">Selecione o Mês</option>
+                                            <option value="">Janeiro</option>
+                                            <option value="">Fevereiro</option>
+                                            <option value="">Março</option>
+                                            <option value="">Abril</option>
+                                            <option value="">Maio</option>
+                                            <option value="">Junho</option>
+                                            <option value="">Julho</option>
+                                            <option value="">Agosto</option>
+                                            <option value="">Setembro</option>
+                                            <option value="">Outubro</option>
+                                            <option value="">Novembro</option>
+                                            <option value="">Dezembro</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xs-4">
+                                        <input type="submit" class="btn btn-success" name="submit" value="Aplicar">
+                                    </div>
+                                </div>
 
-                            </tbody>
-                            </thead>
-                        </table>
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nome custo</th>
+                                        <th>Tipo</th>
+                                        <th>Valor</th>
+                                        <th>Data</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                <tbody>
+
+                                    <?php
+                                    show_all_despesas();
+                                    ?>
+
+                                    <?php
+                                    delete_despesa();
+                                    ?>
+
+                                </tbody>
+                                </thead>
+                            </table>
+                        </form>
                     </div>
                 </div>
                 <!-- /.row -->
